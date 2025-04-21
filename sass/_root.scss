@@ -1,0 +1,22 @@
+:root {
+    @each $color, $value in $grays {
+        --#{$prefix}gray-#{$color}: #{$value};
+    }
+    
+    
+    @if $font-size-root != null {
+        --#{$prefix}root-font-size: #{$font-size-root};
+      }
+
+    @include rfs($font-size-base, --#{$prefix}body-font-size);
+
+    --#{$prefix}link-decoration: #{$link-decoration};
+
+    @if $link-hover-decoration != null {
+        --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
+      }
+
+      --#{$prefix}border-radius: #{$border-radius};
+      --#{$prefix}border-radius-sm: #{$border-radius-sm};
+    }
+ 

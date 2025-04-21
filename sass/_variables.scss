@@ -13,6 +13,17 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+) !default;
 
 
 $variable-prefix:             organisation- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
@@ -29,7 +40,14 @@ $font-size-base:              1rem !default; // Assumes the browser default, typ
 $enable-smooth-scroll:        true !default;
 $enable-rounded:              true !default;
 $enable-button-pointers:      true !default;
+$enable-important-utilities:  true !default;
 
+
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;
 
 
 $spacer: 1rem !default;
@@ -43,6 +61,18 @@ $hr-border-width:             var(--#{$prefix}border-width) !default;
 
 $hr-border-color:             null !default; // Allows for inherited colors
 $hr-opacity:                  .25 !default;
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
 
 
 $h1-font-size:                $font-size-base * 2.5 !default;
