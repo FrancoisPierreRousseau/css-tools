@@ -1,0 +1,118 @@
+// Color system
+
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+
+$variable-prefix:             organisation- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix !default;
+
+$font-family-code:            var(--#{$prefix}font-monospace) !default;
+
+
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+
+
+
+$enable-smooth-scroll:        true !default;
+$enable-rounded:              true !default;
+$enable-button-pointers:      true !default;
+
+
+
+$spacer: 1rem !default;
+
+
+$hr-margin-y:                 $spacer !default;
+$hr-color:                    inherit !default;
+$hr-border-width:             var(--#{$prefix}border-width) !default;
+
+
+
+$hr-border-color:             null !default; // Allows for inherited colors
+$hr-opacity:                  .25 !default;
+
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+) !default;
+
+
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+
+$small-font-size:             .875em !default;
+
+$mark-padding:                .1875em !default;
+
+$sub-sup-font-size:           .75em !default;
+
+
+$link-decoration:                         underline !default;
+$link-hover-decoration:                   null !default;
+
+
+$headings-margin-bottom:      $spacer * .5 !default;
+$headings-font-family:        null !default;
+$headings-font-style:         null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+
+$table-cell-padding-y:        .5rem !default;
+
+$table-caption-color:         var(--#{$prefix}secondary-color) !default;
+
+$table-th-font-weight:        null !default;
+
+
+
+$paragraph-margin-bottom:   1rem !default;
+
+
+$dt-font-weight:              $font-weight-bold !default;
+
+
+$code-font-size:                    $small-font-size !default;
+
+
+$kbd-padding-y:                     .1875rem !default;
+$kbd-padding-x:                     .375rem !default;
+$kbd-font-size:                     $code-font-size !default;
+$kbd-color:                         var(--#{$prefix}body-bg) !default;
+$kbd-bg:                            var(--#{$prefix}body-color) !default;
+$nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, removing in v6
+$pre-color:                         null !default;
+
+
+$border-radius:               .375rem !default;
+$border-radius-sm:            .25rem !default;
+
+
+$legend-margin-bottom:        .5rem !default;
+$legend-font-size:            1.5rem !default;
+$legend-font-weight:          null !default;
