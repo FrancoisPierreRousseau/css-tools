@@ -101,39 +101,79 @@ $font-size-sm: 0.875rem;
 
 ---
 
-### 📏 5. Espacement fluide et design adaptatif
+### 📏 5. Espacement fluide, typographie adaptative et accessibilité intégrée
 
-🔁 Utilisation de fonctions telles que `clamp()` et `calc()` (non incluses explicitement ici, mais suggérées dans l’esprit de ce projet) pour :
+#### 🧩 Utilisation de [RFS (Responsive Font Sizes)](https://github.com/twbs/rfs)
 
-- éviter les "media queries rigides",
-- créer des **espacements et tailles fluides** (entre deux bornes).
-
-🔧 _Approche typique (inspirée de Piper Haywood) :_
+Le projet intègre RFS, un moteur Sass développé par l’équipe de Bootstrap, qui permet de rendre la **typographie et les espacements automatiquement adaptatifs**.
 
 ```scss
-font-size: clamp(1rem, 2vw, 1.5rem);
+@include font-size(2rem);
 ```
 
-🟢 **Résultats ?**
+Ce mixin se compile automatiquement en une règle CSS fluide :
 
-- Expérience utilisateur améliorée sur toutes les tailles d’écran.
-- Plus de zones "vides" ou trop denses.
-- Moins de règles CSS → meilleur rendu, plus rapide à écrire.
+```css
+font-size: calc(1.5rem + 0.3vw);
+```
+
+🟢 **Avantages immédiats** :
+
+- Le texte **s’ajuste intelligemment** à la taille de l’écran sans media queries.
+- Le rythme typographique est fluide, sans sauts brutaux.
+- Le design est **cohérent du mobile au 4K**, sans intervention manuelle.
+
+---
+
+#### 🧠 Rôle fondamental de la typographie dans la cohérence visuelle
+
+- La typographie définit la **hiérarchie du contenu**.
+- Elle conditionne l'espacement entre les blocs, les marges internes/externes, et l’alignement.
+- Un système typographique fluide garantit que tous les éléments **s’adaptent proportionnellement**, ce qui :
+  - renforce la cohérence du design,
+  - améliore l’esthétique générale,
+  - limite les cas d’incohérence visuelle entre pages ou breakpoints.
+
+---
+
+#### ♿️ Accessibilité et compatibilité avec les outils d’assistance
+
+Une typographie basée sur RFS et des unités relatives (`rem`, `em`) :
+
+- ✅ **Suit le zoom du navigateur** (Chrome, Firefox, etc.) sans casser la mise en page.
+- ✅ Reste lisible et utilisable à 150%, 200%, etc.
+- ✅ S’aligne avec les préférences de taille système (OS ou navigateur).
+- ✅ Bénéficie aux utilisateurs avec déficience visuelle ou préférences personnalisées.
+
+🔎 _Exemple réel :_
+
+- Sur Chrome, un zoom à 200% n’écrasera pas les blocs.
+- La hiérarchie (`h1 > h2 > p`) reste intacte grâce à l’échelle fluide.
 
 ---
 
 ## 🚀 Pourquoi cette approche est-elle meilleure ?
 
-### ✅ Avantages pratiques
+| Bénéfice                        | Impact                                                   |
+| ------------------------------- | -------------------------------------------------------- |
+| 💼 Gain de temps                | Moins de redondance, logique factorisée.                 |
+| 🎯 Meilleure cohérence visuelle | Hiérarchie claire, typographie homogène.                 |
+| 🔧 Maintenance simplifiée       | Une variable = un point de contrôle.                     |
+| 🧪 Scalabilité                  | Idéal pour tout type de projet.                          |
+| 🔒 Fiabilité                    | Comportement visuel prévisible sur tous les navigateurs. |
+| 📱 Mobile-first & fluide        | Expérience utilisateur uniforme sur tous les écrans.     |
+| ♿️ Accessibilité intégrée      | Compatible avec zoom, contrastes, lecteurs d’écran.      |
 
-| Bénéfice                        | Impact                                                                         |
-| ------------------------------- | ------------------------------------------------------------------------------ |
-| 💼 Gain de temps                | Moins de redondance, logique factorisée.                                       |
-| 🎯 Meilleure cohérence visuelle | Hiérarchie claire, typographie homogène.                                       |
-| 🔧 Maintenance simplifiée       | Une variable = un point de contrôle.                                           |
-| 🧪 Scalabilité                  | Idéal pour des projets de toute taille, du one-pager au design system complet. |
-| 🔒 Fiabilité                    | Comportement visuel prévisible sur tous les navigateurs.                       |
-| 📱 Mobile-first et adaptatif    | Fluidité sur tous les écrans sans devoir tout réécrire.                        |
+---
+
+## 📎 Fichiers Sass couverts
+
+| Fichier               | Rôle                                             |
+| --------------------- | ------------------------------------------------ |
+| `_reboot.scss`        | Réinitialise et normalise les styles de base.    |
+| `_variables.scss`     | Centralise les tokens de design.                 |
+| `_border-radius.scss` | Fournit un mixin de coins arrondis conditionnel. |
+| Intégration RFS       | Typographie & espacements fluides & accessibles. |
 
 ---
 
